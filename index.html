@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftHub - Лицензионные казино игры</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0c1a2d 0%, #1a2d4d 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .warning {
+            background: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid #ff4444;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 5px;
+            max-width: 800px;
+            font-size: 0.9rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-image {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .game-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+
+        .game-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            color: #0c1a2d;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 107, 53, 0.5);
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .game-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .game-features li:before {
+            content: "★";
+            color: #ffd700;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+/* Стили для поддержки в Telegram */
+        .telegram-support {
+            background: linear-gradient(135deg, #0088cc, #34b7f1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .telegram-support:hover {
+            transform: translateY(-5px);
+        }
+
+        .telegram-icon {
+            font-size: 3.5rem;
+            margin-right: 25px;
+            color: white;
+        }
+
+        .telegram-content {
+            flex: 1;
+        }
+
+        .telegram-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .telegram-description {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .telegram-button {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            color: #0088cc;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .telegram-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .license-info {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .license-info i {
+            color: #ffd700;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .age-restriction {
+            display: inline-block;
+            background: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .telegram-support {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .telegram-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">GiftHub</h1>
+            <p class="tagline">Лицензионные казино игры с высокими выплатами и быстрыми выигрышами</p>
+            
+            <div class="warning">
+                <p><strong>Внимание:</strong> Азартные игры могут вызывать зависимость. Играйте ответственно. Только для лиц старше 18 лет.</p>
+            </div>
+            
+            <div class="license-info">
+                <i class="fas fa-shield-alt"></i> Лицензионные игры | <i class="fas fa-lock"></i> Защищенные платежи | <i class="fas fa-certificate"></i> Честная игра
+            </div>
+        </header>
+
+        <!-- Блок поддержки в Telegram -->
+        <div class="telegram-support">
+            <div class="telegram-icon">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <div class="telegram-content">
+                <h2 class="telegram-title">Поддержка в Telegram 24/7</h2>
+                <p class="telegram-description">Вопросы по играм, выплатам или акциям? Наша служба поддержки всегда на связи в Telegram!</p>
+                <a href="https://t.me/Frenchgvinka" class="telegram-button" target="_blank">
+                    <i class="fab fa-telegram"></i> Написать в поддержку
+                </a>
+            </div>
+        </div>
+
+        <div class="games-grid">
+            <!-- TowerRush -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://avatars.mds.yandex.net/i?id=7dd30d6326969ae7562a84462ffdfd76_sr-5424538-images-thumbs&n=13');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">TowerRush</h3>
+                        <p class="game-description">Быстрая игра с растущими множителями</p>
+                        <a href="https://1wihrq.life/casino/play/infingames_galaxsys_tower_rush?p=68h4" class="play-button">Играть сейчас</a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p>Стройте башни и увеличивайте свой выигрыш с каждым уровнем! Максимальный множитель x1000.</p>
+                    <ul class="game-features">
+                        <li>Высокие коэффициенты выплат</li>
+                        <li>Бонусные уровни с множителями</li>
+                        <li>Быстрые раунды</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Aviamaster -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://contentdeliverynetwork.cc/kirgo1/i/s6/softswiss/Aviamasters.webp');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Aviamaster</h3>
+                        <p class="game-description">Авиа-слот с джекпотом</p>
+                        <a href="https://1wihrq.life/casino/play/v_bgaming:Aviamasters?p=68h4" class="play-button">Играть сейчас</a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p>Покорите небо и выиграйте прогрессивный джекпот! Бонусные полеты увеличивают ваши шансы.</p>
+                    <ul class="game-features">
+                        <li>Прогрессивный джекпот</li>
+                        <li>Бонусные раунды с бесплатными спинами</li>
+                        <li>Высокая волатильность</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ice Fishing -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://i.mycdn.me/getVideoPreview?id=8914645748387&idx=13&type=39&tkn=_M-08_Oz-gNlImS7wgS7674NwI8&fn=vid_x');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Ice Fishing</h3>
+                        <p class="game-description">Расслабляющая игра с большими уловами</p>
+                        <a href="https://1wihrq.life/casino/play/v_evolution:1winicefishing?p=68h4" class="play-button">Играть сейчас</a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p>Поймайте золотую рыбку и сорвите куш! Специальные бонусы за редкие виды рыб.</p>
+                    <ul class="game-features">
+                        <li>Уникальная механика рыбалки</li>
+                        <li>Коллекционные бонусы</li>
+                        <li>Расслабляющий геймплей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="age-restriction">
+            <i class="fas fa-exclamation-triangle"></i> 18+
+        </div>
+
+        <footer>
+            <p>© 2023 GiftHub. Лицензионные азартные игры. Только для лиц старше 18 лет. Играйте ответственно.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Простая анимация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.game-card');
+            const telegramSupport = document.querySelector('.telegram-support');
+            
+            // Анимация для карточек игр
+            cards.
+forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Анимация для блока поддержки
+            setTimeout(() => {
+                telegramSupport.style.opacity = '0';
+                telegramSupport.style.transform = 'translateY(20px)';
+                telegramSupport.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    telegramSupport.style.opacity = '1';
+                    telegramSupport.style.transform = 'translateY(0)';
+                }, 100);
+            }, 800);
+        });
+    </script>
+</body>
+</html>
