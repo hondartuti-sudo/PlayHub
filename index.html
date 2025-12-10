@@ -61,6 +61,193 @@
             font-size: 0.9rem;
         }
 
+        /* Кнопка Все игры */
+        .all-games-button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .all-games-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            color: #0c1a2d;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            min-width: 220px;
+        }
+
+        .all-games-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 107, 53, 0.6);
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+        }
+
+        .all-games-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Блок Telegram канала */
+        .telegram-channel-section {
+            background: linear-gradient(135deg, #229ed9 0%, #0088cc 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 136, 204, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .telegram-channel-section:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .telegram-channel-section:after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .channel-icon {
+            font-size: 4rem;
+            margin-right: 25px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .channel-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .channel-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .channel-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .channel-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .channel-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .channel-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+            color: #0c1a2d;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            min-width: 280px;
+        }
+
+        .channel-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+        }
+
+        .channel-button i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+
+        .subscriber-count {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .subscriber-count i {
+            color: #ffd700;
+            margin-right: 5px;
+        }
+
+        /* Игры и остальные стили остаются как были */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -150,66 +337,6 @@
             margin-right: 10px;
             font-weight: bold;
         }
-/* Стили для поддержки в Telegram */
-        .telegram-support {
-            background: linear-gradient(135deg, #0088cc, #34b7f1);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .telegram-support:hover {
-            transform: translateY(-5px);
-        }
-
-        .telegram-icon {
-            font-size: 3.5rem;
-            margin-right: 25px;
-            color: white;
-        }
-
-        .telegram-content {
-            flex: 1;
-        }
-
-        .telegram-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .telegram-description {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .telegram-button {
-            display: inline-flex;
-            align-items: center;
-            background: white;
-            color: #0088cc;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .telegram-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .telegram-button i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
 
         .license-info {
             background: rgba(255, 215, 0, 0.1);
@@ -253,14 +380,33 @@
                 font-size: 2.5rem;
             }
             
-            .telegram-support {
+            .telegram-channel-section {
+                padding: 25px;
+            }
+            
+            .channel-header {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .telegram-icon {
+            .channel-icon {
                 margin-right: 0;
                 margin-bottom: 15px;
+            }
+            
+            .channel-title {
+                font-size: 1.8rem;
+            }
+            
+            .channel-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .all-games-button,
+            .channel-button {
+                min-width: auto;
+                width: 100%;
+                padding: 14px 25px;
             }
         }
     </style>
@@ -280,17 +426,73 @@
             </div>
         </header>
 
-        <!-- Блок поддержки в Telegram -->
-        <div class="telegram-support">
-            <div class="telegram-icon">
-                <i class="fab fa-telegram"></i>
+        <!-- Кнопка Все игры -->
+        <div class="all-games-button-container">
+            <a href="https://lkis.cc/94698202" class="all-games-button" target="_blank">
+                <i class="fas fa-gamepad"></i> Все игры
+            </a>
+        </div>
+
+        <!-- Блок Telegram канала -->
+        <div class="telegram-channel-section">
+            <div class="channel-header">
+                <div class="channel-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <div>
+                    <h2 class="channel-title">GameTikToka Канал</h2>
+                    <p class="channel-subtitle">Только сливные слоты и проверенные стратегии!</p>
+                </div>
             </div>
-            <div class="telegram-content">
-                <h2 class="telegram-title">Поддержка в Telegram 24/7</h2>
-                <p class="telegram-description">Вопросы по играм, выплатам или акциям? Наша служба поддержки всегда на связи в Telegram!</p>
-                <a href="https://t.me/Frenchgvinka" class="telegram-button" target="_blank">
-                    <i class="fab fa-telegram"></i> Написать в поддержку
-                </a>
+            
+            <div class="channel-content">
+                <p style="font-size: 1.1rem; margin-bottom: 25px; line-height: 1.6;">
+                    Присоединяйтесь к самому горячему Telegram каналу о казино играх! Мы показываем реальные выигрыши, 
+                    делимся рабочими стратегиями и находим самые сливные слоты. Каждый день — новые победы!
+                </p>
+                
+                <div class="channel-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Ежедневные сливы</h3>
+                        <p class="feature-description">Показываем реальные выигрыши с казино каждый день. Скрины, видео, факты.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Рабочие стратегии</h3>
+                        <p class="feature-description">Проверенные методы игры, которые действительно увеличивают шансы на победу.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="feature-title">Эксклюзивные бонусы</h3>
+                        <p class="feature-description">Только у нас — специальные промокоды, фриспины и повышенные кэшбэки.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Живое сообщество</h3>
+                        <p class="feature-description">Общайтесь с другими игроками, делитесь опытом и находите напарников.</p>
+                    </div>
+                </div>
+                
+                <div class="channel-cta">
+                    <a href="https://t.me/gamestiktoka" class="channel-button" target="_blank">
+                        <i class="fab fa-telegram"></i> Подписаться на канал
+                    </a>
+                    <div class="subscriber-count">
+                        <i class="fas fa-users"></i> Уже с нами: 2,500+ активных игроков
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -366,32 +568,73 @@
         // Простая анимация при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.game-card');
-            const telegramSupport = document.querySelector('.telegram-support');
+            const allGamesButton = document.querySelector('.all-games-button');
+            const channelSection = document.querySelector('.telegram-channel-section');
+            const featureItems = document.querySelectorAll('.feature-item');
+            
+            // Анимация для кнопки "Все игры"
+            allGamesButton.style.opacity = '0';
+            allGamesButton.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                allGamesButton.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                allGamesButton.style.opacity = '1';
+                allGamesButton.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // Анимация для блока канала
+            channelSection.style.opacity = '0';
+            channelSection.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                channelSection.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+                channelSection.style.opacity = '1';
+                channelSection.style.transform = 'translateY(0)';
+            }, 500);
+            
+            // Анимация для фич канала
+            setTimeout(() => {
+                featureItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            }, 800);
             
             // Анимация для карточек игр
-            cards.
-forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 200 * index);
-            });
-            
-            // Анимация для блока поддержки
             setTimeout(() => {
-                telegramSupport.style.opacity = '0';
-                telegramSupport.style.transform = 'translateY(20px)';
-                telegramSupport.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    telegramSupport.style.opacity = '1';
-                    telegramSupport.style.transform = 'translateY(0)';
-                }, 100);
-            }, 800);
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 200 * index);
+                });
+            }, 1000);
+            
+            // Добавляем подсчет подписчиков (анимация)
+            const subCount = document.querySelector('.subscriber-count');
+            if (subCount) {
+                let count = 0;
+                const target = 2500;
+                const increment = target / 100;
+                const interval = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(interval);
+                    }
+                    subCount.innerHTML = `<i class="fas fa-users"></i> Уже с нами: ${Math.floor(count)}+ активных игроков`;
+                }, 20);
+            }
         });
     </script>
 </body>
