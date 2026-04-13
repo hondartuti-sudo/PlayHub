@@ -61,7 +61,6 @@
             font-size: 0.9rem;
         }
 
-        /* Кнопка Все игры */
         .all-games-button-container {
             text-align: center;
             margin: 30px 0;
@@ -95,7 +94,6 @@
             font-size: 1.2rem;
         }
 
-        /* Блок Telegram канала */
         .telegram-channel-section {
             background: linear-gradient(135deg, #229ed9 0%, #0088cc 100%);
             border-radius: 20px;
@@ -247,7 +245,6 @@
             margin-right: 5px;
         }
 
-        /* Игры и остальные стили остаются как были */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -426,14 +423,12 @@
             </div>
         </header>
 
-        <!-- Кнопка Все игры -->
         <div class="all-games-button-container">
             <a href="https://r1wvklw.life/?open=register&p=f8l7" class="all-games-button" target="_blank">
                 <i class="fas fa-gamepad"></i> Все игры
             </a>
         </div>
 
-        <!-- Блок Telegram канала с обновленной ссылкой -->
         <div class="telegram-channel-section">
             <div class="channel-header">
                 <div class="channel-icon">
@@ -486,7 +481,6 @@
                 </div>
                 
                 <div class="channel-cta">
-                    <!-- Обновленная ссылка на Telegram канал -->
                     <a href="https://t.me/+MngaZIw-wo8xYzZi" class="channel-button" target="_blank">
                         <i class="fab fa-telegram"></i> Подписаться на канал
                     </a>
@@ -575,22 +569,22 @@
                 </div>
             </div>
 
-            <!-- Rush Hour Classic - Новая игра -->
+            <!-- Doodle Jump (новая игра) -->
             <div class="game-card">
-                <div class="game-image" style="background-image: url('https://images.pexels.com/photos/163038/minibus-vw-bus-minibus-road-163038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="game-image" style="background-image: url('https://i.ytimg.com/vi/C0hGvWYNghI/maxresdefault.jpg');">
                     <div class="game-overlay">
-                        <h3 class="game-title">Rush Hour Classic</h3>
-                        <p class="game-description">Гонки на выживание с множителями</p>
-                        <a href="https://r1wvklw.life/casino/play/v_155.io:rushhourclassic?p=f8l7" class="play-button">Играть сейчас</a>
+                        <h3 class="game-title">Doodle Jump</h3>
+                        <p class="game-description">Прыгайте выше и собирайте бонусы!</p>
+                        <a href="https://r1wvklw.life/casino/play/v_barbarabang:doodlecrash?p=f8l7" class="play-button">Играть сейчас</a>
                     </div>
                 </div>
                 <div class="game-content">
-                    <p>Участвуйте в захватывающих гонках в час пик! Обгоняйте соперников и увеличивайте множители выигрыша.</p>
+                    <p>Прыгайте по платформам, уворачивайтесь от препятствий и собирайте множители! Динамичный геймплей с растущим кушем.</p>
                     <ul class="game-features">
-                        <li>Динамичный геймплей с реальными соперниками</li>
+                        <li>Динамичная механика прыжков</li>
                         <li>Множители до x5000</li>
-                        <li>Бонусные уровни с повышенными ставками</li>
-                        <li>Турнирная таблица лидеров</li>
+                        <li>Бонусные платформы с ускорителями</li>
+                        <li>Рекорды и таблица лидеров</li>
                     </ul>
                 </div>
             </div>
@@ -606,14 +600,12 @@
     </div>
 
     <script>
-        // Простая анимация при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.game-card');
             const allGamesButton = document.querySelector('.all-games-button');
             const channelSection = document.querySelector('.telegram-channel-section');
             const featureItems = document.querySelectorAll('.feature-item');
             
-            // Анимация для кнопки "Все игры"
             allGamesButton.style.opacity = '0';
             allGamesButton.style.transform = 'translateY(20px)';
             
@@ -623,7 +615,6 @@
                 allGamesButton.style.transform = 'translateY(0)';
             }, 300);
             
-            // Анимация для блока канала
             channelSection.style.opacity = '0';
             channelSection.style.transform = 'translateY(30px)';
             
@@ -633,7 +624,6 @@
                 channelSection.style.transform = 'translateY(0)';
             }, 500);
             
-            // Анимация для фич канала
             setTimeout(() => {
                 featureItems.forEach((item, index) => {
                     item.style.opacity = '0';
@@ -647,7 +637,6 @@
                 });
             }, 800);
             
-            // Анимация для карточек игр (включая новую)
             setTimeout(() => {
                 cards.forEach((card, index) => {
                     card.style.opacity = '0';
@@ -661,7 +650,6 @@
                 });
             }, 1000);
             
-            // Добавляем подсчет подписчиков (анимация)
             const subCount = document.querySelector('.subscriber-count');
             if (subCount) {
                 let count = 0;
